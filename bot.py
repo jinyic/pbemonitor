@@ -1,3 +1,4 @@
+import os
 import discord
 from discord.ext import commands
 
@@ -14,3 +15,6 @@ async def on_ready():
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
+
+
+bot.run(os.environ["token"])
