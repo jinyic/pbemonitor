@@ -38,7 +38,15 @@ async def embed(ctx):
             }
         ]
     }
-    await ctx.send(embed=discord.Embed.from_dict(payload))
+    embed = discord.Embed(
+        title="Test Notification",
+        type="rich",
+        description="PBE live!",
+        timestamp=datetime.utcnow(),
+        colour=64154,
+    )
+    embed.set_footer(text="By  Jin Yi")
+    await ctx.send(embed=embed)
 
 
 bot.run(os.environ["token"])
