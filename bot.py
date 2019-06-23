@@ -22,6 +22,8 @@ async def ping(ctx):
 async def embed(ctx):
     time = str(datetime.utcnow())
     json_time = time.replace(" ", "T")
+
+    # did it in dict
     payload = {
         "embeds": [
             {
@@ -36,7 +38,7 @@ async def embed(ctx):
             }
         ]
     }
-    await ctx.send(embed=payload)
+    await ctx.send(embed=discord.Embed.from_dict(payload))
 
 
 bot.run(os.environ["token"])
