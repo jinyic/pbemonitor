@@ -23,6 +23,10 @@ def create_embed(title, message):
 
 @bot.event
 async def on_ready():
+    await bot.change_presence(activity=discord.Activity(
+        name="butterflies",
+        type=discord.ActivityType.watching,
+        start=datetime.utcnow()))
     print(bot.user.name + " Launched")
     print("By Jin Yi")
     print("-" * 20)
@@ -37,6 +41,11 @@ async def ping(ctx):
 async def start(ctx):
     global monitoring
     monitoring = True
+    # update presence to indicate monitor is on
+    await bot.change_presence(activity=discord.Activity(
+        name="the PBE server status",
+        type=discord.ActivityType.watching,
+        start=datetime.utcnow()))
     while monitoring:
         r = requests.get("https://status.pbe.leagueoflegends.com/shards/pbe")
         if r.status_code == 200 and r.json()["services"][0]["status"] != "offline":
@@ -48,6 +57,9 @@ async def start(ctx):
 async def stop(ctx):
     global monitoring
     monitoring = False
-
+    await bot.change_presence(activity=discord.Activity(
+        name="butterflies",
+        type=discord.ActivityType.watching,
+        start=datetime.utcnow()))
 
 bot.run(os.environ["token"])
