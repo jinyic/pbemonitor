@@ -25,5 +25,8 @@ Once the PBE server is under maintenance, start the monitor by using the command
 ![Discord Notification](https://i.imgur.com/KLZf071.png)  
 Once the server goes live, the bot will repeatedly send messages into the text channel. Use **!stop** to stop the notifications.
 
+To check whether the bot is monitoring or not, look at the bot's status.  
+![Bot Status](https://i.imgur.com/ogmWgOY.png)
+
 ### Disclaimer
 This project was created to integrate a program within Discord using Heroku's services and is not affiliated with any of the services used. It is purely for educational purposes. I am not responsible for anything that happens by using this program. Use at your own risk.
