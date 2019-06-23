@@ -21,8 +21,8 @@ Set config vars for Heroku:
 > delay is the monitor delay in seconds
 
 ## Usage
-Once the PBE server is under maintenance, start the monitor by using the command **!start** in the text channel that you want the notification to be in.
-
+Once the PBE server is under maintenance, start the monitor by using the command **!start** in the text channel that you want the notification to be in.  
+![Discord Notification](https://i.imgur.com/zk8i62T.png)  
 Once the server goes live, the bot will repeatedly send messages into the text channel. Use **!stop** to stop the notifications.
 
 ### Disclaimer
