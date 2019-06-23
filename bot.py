@@ -40,7 +40,7 @@ async def start(ctx):
     while monitoring:
         r = requests.get("https://status.pbe.leagueoflegends.com/shards/pbe")
         if r.status_code == 200 and r.json()["services"][0]["status"] != "offline":
-            await ctx.send(embed=create_embed("PBE LIVE!", "Log on quickly!"))
+            await ctx.send(embed=create_embed("PBE LIVE!", "Sign in quickly!"))
         time.sleep(int(os.environ["delay"]))
 
 
