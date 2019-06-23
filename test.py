@@ -2,9 +2,9 @@ import requests
 import time
 from datetime import datetime
 
-jtime = str(datetime.utcnow())
-
-json_time = jtime.replace(" ", "T")
+# for testing
+dtime = str(datetime.utcnow())
+json_time = dtime.replace(" ", "T")
 
 payload = {
     "embeds": [
@@ -30,8 +30,7 @@ while True:
     status = r.json()
     if status["services"][0]["status"] != "offline":
         print("online")
-        # r = requests.post(
-        #    "https://discordapp.com/api/webhooks/591393163902713858/k34FyjV-LgX6ZswWFAK3VSFxKXPVx75gG2Iq3wHDO97EalvOnTqLvM1wip6bUWmtSZtl", json=payload)
+
     else:
         # print(status["services"][0])
         print("offline")
