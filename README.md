@@ -23,7 +23,7 @@ Set config vars for Heroku:
 ## Usage
 Once the PBE server is under maintenance, start the monitor by using the command **!start** in the text channel that you want the notification to be in.  
 ![Discord Notification](https://i.imgur.com/KLZf071.png)  
-Once the server goes live, the bot will repeatedly send messages into the text channel. Use **!stop** to stop the notifications.
+When the server goes live, the bot will repeatedly send messages into the text channel. Use **!stop** to stop the notifications.
 
 To check whether the bot is monitoring or not, look at the bot's status.  
 ![Bot Status](https://i.imgur.com/ogmWgOY.png)
