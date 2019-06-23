@@ -1,6 +1,6 @@
 # pbemonitor
 
-A Discord bot ready to be deployed on Heroku to monitor when the PBE server is up. This allows for fast entry into the long queue caused by the new gamemode Teamfight Tactics.
+A Discord bot ready to be deployed on Heroku to monitor when the League of Legends PBE server is up. Logging in right when the server goes live allows for fast entry into the long queue caused by the new game mode Teamfight Tactics.
 
 ### Prerequisites
 - Heroku
