@@ -1,9 +1,11 @@
 import os
+import time
 from datetime import datetime
 import discord
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix=os.environ["cmd_prefix"])
+monitoring = False
 
 
 def create_embed(title, message):
@@ -32,7 +34,17 @@ async def ping(ctx):
 
 @bot.command()
 async def start(ctx):
-    await ctx.send("pong")
+    global monitoring
+    monitoring = True
+    while monitoring:
+        await ctx.send("pong")
+        time.sleep(2)
+
+
+@bot.command()
+async def stop(ctx):
+    global monitoring
+    monitoring = False
 
 
 @bot.command()
