@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 import discord
 from discord.ext import commands
 
@@ -15,6 +16,27 @@ async def on_ready():
 @bot.command()
 async def ping(ctx):
     await ctx.send("pong")
+
+
+@bot.command()
+async def embed(ctx):
+    time = str(datetime.utcnow())
+    json_time = time.replace(" ", "T")
+    payload = {
+        "embeds": [
+            {
+                "color": 64154,
+                "description": "PBE Live!",
+                "title": "Test Notification",
+                "timestamp": json_time,
+                "url": "",
+                "image": {"url": ""},
+                "thumbnail": {},
+                "footer": {"text": "By Jin Yi", "icon_url": ""}
+            }
+        ]
+    }
+    await ctx.send(payload)
 
 
 bot.run(os.environ["token"])
