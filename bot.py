@@ -36,7 +36,7 @@ async def embed(ctx):
             }
         ]
     }
-    await ctx.send(payload)
+    await ctx.send(embed=payload)
 
 
 bot.run(os.environ["token"])
