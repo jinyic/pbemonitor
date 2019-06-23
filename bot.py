@@ -1,6 +1,7 @@
 import os
 import time
 from datetime import datetime
+import requests
 import discord
 from discord.ext import commands
 
@@ -29,7 +30,7 @@ async def on_ready():
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send("pong")
+    await ctx.send(embed=create_embed("PBE Monitor", "Pong!"))
 
 
 @bot.command()
@@ -37,19 +38,16 @@ async def start(ctx):
     global monitoring
     monitoring = True
     while monitoring:
-        await ctx.send("pong")
-        time.sleep(2)
+        r = requests.get("https://status.pbe.leagueoflegends.com/shards/pbe")
+        if r.status_code == 200 and r.json()["services"][0]["status"] != "offline":
+            await ctx.send(embed=create_embed("PBE LIVE!", "Log on quickly!"))
+        time.sleep(int(os.environ["delay"]))
 
 
 @bot.command()
 async def stop(ctx):
     global monitoring
     monitoring = False
-
-
-@bot.command()
-async def embed(ctx):
-    await ctx.send(embed=create_embed("Test Notification", "PBE live!"))
 
 
 bot.run(os.environ["token"])
