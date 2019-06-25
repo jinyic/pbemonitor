@@ -25,7 +25,7 @@ Set config vars for Heroku:
 ## Usage
 Start the monitor by using **!start** in the text channel that you want the notification to be in. **!stop** will stop the monitor.  
 
-The bot will send a message when the server goes either live or under maintenance.  
+The bot will send a message when the server either goes live or under maintenance.  
 ![Discord Notification](https://i.imgur.com/KLZf071.png)   
 
 To check the current server status, look at the bot's status.  
