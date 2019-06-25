@@ -27,7 +27,6 @@ Start the monitor by using **!start** in the text channel that you want the noti
 
 The bot will send a message when the server goes either live or under maintenance.  
 ![Discord Notification](https://i.imgur.com/KLZf071.png)   
-When the server goes live, the bot will send a message into the channel.  
 
 To check the current server status, look at the bot's status.  
 ![Bot Status](https://i.imgur.com/SFjZxH3.png)  
