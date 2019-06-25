@@ -15,6 +15,7 @@ bot = commands.Bot(command_prefix=CMD_PREFIX)
 
 state = ""
 monitor_channel = None
+monitoring = False
 
 
 async def create_embed(title, message):
@@ -59,12 +60,13 @@ async def ping(ctx):
 
 @bot.command()
 async def start(ctx):
-    global state, monitor_channel
+    global state, monitor_channel, monitoring
     # check if it is on a loop
-    if monitor.current_loop:
+    if monitoring:
         await ctx.send(embed=await create_embed("PBE Monitor", "Bot is already monitoring"))
         return
 
+    monitoring = True
     monitor_channel = ctx.channel
     await ctx.send(embed=await create_embed("PBE Monitor", "Bot is now watching the PBE server status"))
     await set_presence(f"PBE | Status: {state.upper()}")
@@ -73,11 +75,12 @@ async def start(ctx):
 
 @bot.command()
 async def stop(ctx):
-    if monitor.current_loop == 0:
+    if not monitoring:
         await ctx.send(embed=await create_embed("PBE Monitor", "Bot is already stopped"))
         return
 
     monitor.stop()
+    monitoring = False
     await ctx.send(embed=await create_embed("PBE Monitor", "Bot stopped monitoring"))
     await set_presence(f"PBE | {CMD_PREFIX}start")
 
