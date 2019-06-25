@@ -19,8 +19,8 @@ Set config vars for Heroku:
 
 > **cmd_prefix** is the Discord command prefix.  
 > **token** is the Discord bot token.  
-> **off_delay** is the monitor delay when the server is offline, this number should be low to catch when the server goes live
-> **on_delay** is the monitor delay when the server is online, I would recommend 300 seconds to catch when the server goes under maintenance
+> **off_delay** is the monitor delay when the server is offline, this number should be low to catch when the server goes live.  
+> **on_delay** is the monitor delay when the server is online, I would recommend 300 seconds to catch when the server goes under maintenance.  
 
 ## Usage
 Start the monitor by using **!start** in the text channel that you want the notification to be in. **!stop** will stop the monitor.
