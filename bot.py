@@ -75,6 +75,7 @@ async def start(ctx):
 
 @bot.command()
 async def stop(ctx):
+    global monitoring
     if not monitoring:
         await ctx.send(embed=await create_embed("PBE Monitor", "Bot is already stopped"))
         return
